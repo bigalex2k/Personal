@@ -1,0 +1,47 @@
+/*You can choose to apply rulesets based on the type of HTML that is being selected*/
+div {
+    color:blue;
+}
+
+/*Class selectors.*/
+/*Classes that are multi-worded, should be seperated by '-'s instead.*/
+/*You can give HTML elements multiple classes by seperating with spaces*/
+.class {
+    color: red;
+}
+
+#id-testing {
+    font-size: 20px;
+}
+
+/*You can combine selectors into the same ruleset. This one only applies if the html fufills EITHER of these selectors*/
+.condition1,
+.condition2 {
+    /*Some rules common to each condition*/
+    font-family: cursive;
+}
+
+/*You can also choose to only apply a rule if the HTML fufills both conditions*/
+.condition1.condition2 {
+    /*Some rules when both conditions are fufilled*/
+    font-size: 30px;
+}
+
+/*You can also combine classes, IDs, and Types*/
+.condition1#id_testing {
+
+}
+
+/*If you have HTML elements within other ones, you have the ability to apply rulesets only if some html elements is within another one*/
+p .condition1 {
+
+}
+
+
+.condition1 {
+    /*Some unique rule unique to condition 1*/
+}
+
+.condition2 {
+    /*Some unique rule unique to condition 2*/
+}
