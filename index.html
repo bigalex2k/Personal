@@ -3,20 +3,27 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./Styling/index.css">
         <title>Alex's Website</title>
     </head>
-
     <body>
-        <p> 
-            Hi, welcome to my website, as I learn more HTML, JavaScript, and CSS, I'll add more stuff to this website to make it look cooler. Take a look!
-        </p>
-        <!--<ul> stands for unordered list. There also exists an <ol> which is ordered list (1,2,3,etc)-->
-        <ul>
-            <!-- <li> stands for list item-->
-            <li><a href="pages/about.html">About Me</a></li>
-            <li><a href="pages/htmlNotes.html">Notes on HTML</a></li>
-            <li><a href="pages/cssNotes.html">Notes on CSS</a></li>
-            <li><a href="pages/boxModelNotes.html">Notes on Box Model</a></li>
-        </ul>
+        <div class="header">
+            <span class="headerTitle">
+                <a href="./index2.html"><strong>Website Title</strong></a>
+            </span>
+            <span class="headerLink" style="display: flex; flex: 1; justify-content: center;">
+                <a href="./pages/about.html">About Me</a>
+                <a href="https://google.com">Education</a>
+                <a href="https://google.com">Link 3</a>
+                <a href="https://google.com">Link 4</a>
+                <a href="https://google.com">Link 5</a>
+            </span>
+        </div>
+        <div class="body">
+            <div class="bodyIntro">
+                <p style="width: 14rem;">Hi, welcome to my website, as I learn more HTML, JavaScript, and CSS, I'll add more stuff to this website to make it look cooler.</p>
+            </div>
+            <img src="./images/cap.png" alt="Graduation Cap" height="400rem" width = "auto">
+        </div>
     </body>
 </html>
