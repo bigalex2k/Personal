@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>API Fetching</title>
+        <script></script>
+    </head>
+    <body>
+        <h1>Manipulating PokeAPI Data</h1>
+        <p>Common ways to reshape and work with fetched data before rendering:</p>
+        <ul>
+            <li><strong>Filter</strong>: keep only matching items (type, generation, habitat).</li>
+            <li><strong>Map/Transform</strong>: rename keys, compute derived values.</li>
+            <li><strong>Sort</strong>: order by name, ID, height, or stats.</li>
+            <li><strong>Reduce/Aggregate</strong>: totals, averages, min/max.</li>
+            <li><strong>Normalize</strong>: flatten nested objects for easier UI usage.</li>
+            <li><strong>Group</strong>: bucket by type or generation.</li>
+            <li><strong>Merge</strong>: combine results from multiple endpoints.</li>
+            <li><strong>Cache</strong>: store results in memory or localStorage.</li>
+        </ul>
+
+        <h2>Example (filter + map + sort)</h2>
+        <pre><code>// Get Electric-type Pokémon, then list names sorted by base speed.
+fetch('https://pokeapi.co/api/v2/type/electric')
+    .then(res => res.json())
+    .then(data => data.pokemon.map(p => p.pokemon.name))
+    .then(names => names.sort())
+    .then(sortedNames => console.log(sortedNames));
+</code></pre>
+
+        <h2>Example (derive stats)</h2>
+        <pre><code>// Compute total base stats for a single Pokémon.
+fetch('https://pokeapi.co/api/v2/pokemon/pikachu')
+    .then(res => res.json())
+    .then(p => {
+        const total = p.stats.reduce((sum, s) => sum + s.base_stat, 0);
+        return { name: p.name, totalBaseStats: total };
+    })
+    .then(result => console.log(result));
+</code></pre>
+
+        <h2>Example (normalize nested data)</h2>
+        <pre><code>// Flatten nested abilities into a simple array.
+fetch('https://pokeapi.co/api/v2/pokemon/ditto')
+    .then(res => res.json())
+    .then(p => ({
+        id: p.id,
+        name: p.name,
+        abilities: p.abilities.map(a => a.ability.name)
+    }))
+    .then(flat => console.log(flat));
+</code></pre>
+
+        <script>
+            // fetch(url, {options})
+            fetch('https://pokeapi.co/api/v2/pokemon/pikachu')
+                .then(function(response) {
+                    if (!response.ok) {
+                        throw new Error("Could not fetch resource");
+                    }
+                    return response.json();
+                })
+                .then(function(data) {
+                    console.log(data.id);
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
+
+            // Fetch Mewtwo with arrow functions
+            fetch('https://pokeapi.co/api/v2/pokemon/mewtwo')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    return data;
+                })
+                .then(data => {
+                    const img = document.createElement('img');
+                    img.src = data.sprites.back_default;
+                    img.alt = data.name;
+                    document.body.appendChild(img);
+                    return data;
+                })
+                .then(data => {
+                    const audio = document.createElement('audio');
+                    audio.src = data.cries.latest;
+                    audio.controls = true;
+                    document.body.appendChild(audio);
+                    audio.play();
+                })
+                .catch(error => console.log(error));
+        </script>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>JavaScript notes</title>
+         <!-- The defer keyword is here because normally this sutff is ran before <body> is created.
+              So we need to DEFER it until after so the script can actually search for stuff that's been created-->
+        <script src="./jsNotes.js" defer></script>
+    </head>
+    <body class="body" style="background-color: #84a9c0;">
+        <script>
+            //Insert JavaScript here
+        </script>
+        <!-- After the body is loaded, the script below is then loaded which causes the DOM to load the new HTML elements-->
+        <h1 id="container">JavaScript Insertion</h1>
+         <button onclick="alert('This Method kinda sucks because we can only set up one thing to happen when clicked')">Embedded Events</button>
+         <button id="ButtonRaw">Button ID Event</button>
+         <button id="ButtonActionEvent">Event Listener Button</button>
+         <button id="ColorChange">Color Change Button</button>
+    </body>
+</html>
