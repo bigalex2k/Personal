@@ -3,27 +3,29 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./assets/css/index.css">
+        <link rel="stylesheet" href="../assets/css/pokemon.css">
         <title>Alex's Website</title>
     </head>
     <body>
         <div class="header">
             <span class="headerTitle">
-                <a href=""><strong>Website Title</strong></a>
+                <a href="../index.html">Website Title</a>
             </span>
             <span class="headerLink" style="display: flex; flex: 1; justify-content: center;">
-                <a href="./pages/about.html">About Me</a>
-                <a href="./pages/pokemon.html">Pokemon</a>
-                <a href="./pages/notes.html">Notes</a>
+                <a href="./about.html">About Me</a>
+                <a href="./pokemon.html"><strong>Pokemon</strong></a>
+                <a href="./notes.html">Notes</a>
                 <a href="https://google.com">Link 4</a>
                 <a href="https://google.com">Link 5</a>
             </span>
         </div>
         <div class="body">
             <div class="bodyIntro">
-                <p style="width: 14rem;">Hi, welcome to my website, as I learn more HTML, JavaScript, and CSS, I'll add more stuff to this website to make it look cooler.</p>
+                <input type="text" value = "Pikachu" id = "pokemonName">
+                <button onclick="getPokemon()">Button</button>
+                <div style="flex: auto;" id = "pokemonData"></div>
             </div>
-            <img src="./assets/images/cap.png" alt="Graduation Cap" width="40%">
         </div>
+        <script src="../assets/js/getPokemon.js"></script>
     </body>
 </html>

@@ -1,0 +1,67 @@
+html {
+	font-size: 100%;
+	background-color: #84a9c0;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.header {
+	background-color: #003d5b;
+	color: ghostwhite;
+	width: inherit;
+	min-height: 4rem;
+	height: 10vh;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+}
+
+.header .headerTitle a {
+	margin: 1rem;
+	font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+}
+
+.header .headerLink a {
+	margin: 1rem;
+	margin-inline: 2rem;
+	font-size: clamp(1.125rem, 2.2vw, 2rem);
+}
+
+.body {
+	background-color: #84a9c0;
+	color: #252627;
+	width: 100%;
+	min-height: 90vh;
+	min-height: 90svh;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.body * {
+	margin: 4rem;
+}
+
+.body .bodyIntro {
+	min-height: 10rem;
+	background-color: #B3CBB9;
+}
+
+#pokemonData {
+	margin: 0.5rem;
+	text-align: center;
+}
+
+#pokemonData img {
+	margin: 0.5rem;
+}
