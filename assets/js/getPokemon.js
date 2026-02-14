@@ -1,6 +1,8 @@
+let last = "NAs"
 function getPokemon() {
 const name = document.getElementById('pokemonName').value.toLowerCase();
-    fetched = true;
+    if (name != last) {
+    last = name;
     fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
         .then(function(response) {
             if (!response.ok) {
@@ -22,4 +24,14 @@ const name = document.getElementById('pokemonName').value.toLowerCase();
         .catch(function(error) {
             console.log(error);
         });
+    }
+    else {
+        const audio = document.querySelector('#pokemonData audio');
+        if (audio) {
+            // Reset and replay the current cry when the same Pokemon is requested.
+            audio.pause();
+            audio.currentTime = 0;
+            audio.play();
+        }
+    }
 }
